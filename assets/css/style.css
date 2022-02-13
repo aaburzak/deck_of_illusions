@@ -1,0 +1,21 @@
+
+/* Font family courtesy of https://fonts.google.com/specimen/Josefin+Sans  */
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+  background: radial-gradient( rgb(87, 3, 73) 0%, rgba(26, 12, 8, 0.954) 100%);
+  color: rgb(233, 217, 217);
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 75px;
+}
+
+img{
+  border-radius: 10%;
+}
