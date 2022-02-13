@@ -16,6 +16,15 @@ body {
   margin: 75px;
 }
 
-img{
-  border-radius: 10%;
+.button{
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.hide{
+  display: none;
+}
+
+.button:hover {
+  box-shadow: inset 0px 0px 8px rgb(82, 2, 68), 0 0 15px rgb(255, 255, 255);
 }
