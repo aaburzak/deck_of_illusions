@@ -21,13 +21,18 @@
       <div class="row">
         <div class="col-md-5 playerCard">
           <h2 id="cardName">Deck of Illusions</h2>
-          <!-- <h3 id="cardName"></h3> -->
-          <button class="draw_button button" id="drawButton">
-            <img id = "cardImage" src="assets/images/cardBack.png" alt="deck of illusion" />
+          
+          <button class="start_button button " id="startButton">
+            <img class = "cardImage" src="assets/images/cardBack.png" alt="deck of illusion" />
           </button>
-          <!-- <button class="next_button button hide" id="nextButton">
-            <img src="#" alt="deck of illusion" />
-          </button> -->
+          <button class="draw_button button hide" id="drawButton">
+            <img class = "cardImage" src="#" alt="deck of illusion" />
+          </button>
+        </div>
+      </div>
+      <div id="smokePic" class = "row hide">
+        <div class="col-md-12">
+          <img src="assets/images/smoke.png" alt="smoke" />
         </div>
       </div>
 
@@ -36,6 +41,9 @@
           <h5 id = "cardDesc">
             The magic of the deck functions only if cards are drawn at random
           </h5>
+          <h3 id="finishDeck" class ="hide">
+            The deck vanishes in a puff of smoke
+          </h3>
         </div>
       </div>
 

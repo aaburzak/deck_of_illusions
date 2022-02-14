@@ -1,7 +1,7 @@
 
 /* Font family courtesy of https://fonts.google.com/specimen/Josefin+Sans  */
 body {
-  font-family: 'Redressed', cursive;;
+  font-family: 'Redressed', cursive;
   font-size: 16px;
   line-height: 1;
   text-align: center;
@@ -22,7 +22,7 @@ body {
   background: radial-gradient( rgb(87, 3, 73) 0%, rgba(26, 12, 8, 0.954) 100%);
   border-color: rgb(87, 3, 73);
 }
-img{
+.cardImage{
   border-radius: 15px;
   padding: 10px;
 }

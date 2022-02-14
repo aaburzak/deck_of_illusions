@@ -1,29 +1,46 @@
+const startDraw = $("#startButton")
 const drawCard = $("#drawButton");
-// const deckNameElement = $("#deckName");
 const cardNameElement = $("#cardName");
-const cardImageElement = $("#cardImage");
+const cardImageElement = $(".cardImage");
 const cardDescElement = $("#cardDesc");
 const cardCountElement = $("#cardsLeft");
+const finishElement = $("#finishDeck");
+const smokeElement = $("#smokePic")
 
 let shuffleCards, currentCardIndex;
 
-drawCard.click(selectCard);
+startDraw.click(selectCard);
+
+drawCard.click(()=>{
+  currentCardIndex++;
+  showCard(shuffleCards[currentCardIndex]);
+});
 
 function selectCard() {
   shuffleCards = deck.sort(() => Math.random() - 0.5);
   currentCardIndex = 0;
+  startDraw.addClass("hide");
   showCard(shuffleCards[currentCardIndex]);
-  console.log("Is This your card?");
+  console.log(currentCardIndex);
 }
 
-// function setNextCard() {
-//   showCard(shuffleCards[currentCardIndex]);
-// }
+
 
 function showCard(deck) {
   cardNameElement.text(deck.card_Name);
   cardImageElement.attr("src", deck.card_Image);
   cardDescElement.text(deck.card_Description);
+
+  if(shuffleCards.length > currentCardIndex +1){
+    drawCard.removeClass("hide");
+  } else{
+    drawCard.addClass("hide");
+    cardNameElement.addClass("hide");
+    cardDescElement.addClass("hide");
+    finishElement.removeClass("hide");
+    smokeElement.removeClass("hide");
+  }
+
 
   // console.log(cardNameElement);
   // console.log(cardImageElement);
