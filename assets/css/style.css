@@ -1,7 +1,7 @@
 
 /* Font family courtesy of https://fonts.google.com/specimen/Josefin+Sans  */
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Redressed', cursive;;
   font-size: 16px;
   line-height: 1;
   text-align: center;
@@ -34,4 +34,8 @@ img{
 .button:hover {
   border-color: rgb(87, 3, 73);
   box-shadow: inset 0px 0px 8px rgb(82, 2, 68), 0 0 15px rgb(245, 13, 168);
+}
+
+#cardDesc{
+  font-family: 'Josefin Sans', sans-serif;
 }
