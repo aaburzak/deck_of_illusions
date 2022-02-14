@@ -17,11 +17,14 @@ body {
 }
 
 .button{
-  border-radius: 10px;
+  border-radius: 15px;
   margin-top: 25px;
+  background: radial-gradient( rgb(87, 3, 73) 0%, rgba(26, 12, 8, 0.954) 100%);
+  border-color: rgb(87, 3, 73);
 }
 img{
-  border-radius: 10px;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 .hide{
@@ -30,5 +33,5 @@ img{
 
 .button:hover {
   border-color: rgb(87, 3, 73);
-  box-shadow: inset 0px 0px 8px rgb(82, 2, 68), 0 0 15px rgb(255, 255, 255);
+  box-shadow: inset 0px 0px 8px rgb(82, 2, 68), 0 0 15px rgb(245, 13, 168);
 }
