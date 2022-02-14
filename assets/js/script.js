@@ -5,7 +5,9 @@ const cardImageElement = $(".cardImage");
 const cardDescElement = $("#cardDesc");
 const cardCountElement = $("#cardsLeft");
 const finishElement = $("#finishDeck");
-const smokeElement = $("#smokePic")
+const smokeElement = $("#smokePic");
+
+let deckCount = 34;
 
 let shuffleCards, currentCardIndex;
 
@@ -21,7 +23,7 @@ function selectCard() {
   currentCardIndex = 0;
   startDraw.addClass("hide");
   showCard(shuffleCards[currentCardIndex]);
-  console.log(currentCardIndex);
+
 }
 
 
@@ -30,6 +32,10 @@ function showCard(deck) {
   cardNameElement.text(deck.card_Name);
   cardImageElement.attr("src", deck.card_Image);
   cardDescElement.text(deck.card_Description);
+  deckCount --;
+  cardCountElement.text("Remaining Cards: " + deckCount);
+
+console.log(shuffleCards);
 
   if(shuffleCards.length > currentCardIndex +1){
     drawCard.removeClass("hide");
@@ -37,6 +43,7 @@ function showCard(deck) {
     drawCard.addClass("hide");
     cardNameElement.addClass("hide");
     cardDescElement.addClass("hide");
+    cardCountElement.addClass("hide");
     finishElement.removeClass("hide");
     smokeElement.removeClass("hide");
   }
