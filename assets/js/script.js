@@ -6,6 +6,7 @@ const cardDescElement = $("#cardDesc");
 const cardCountElement = $("#cardsLeft");
 const finishElement = $("#finishDeck");
 const smokeElement = $("#smokePic");
+let usedCards = [];
 
 let deckCount = 34;
 
@@ -26,16 +27,36 @@ function selectCard() {
 }
 
 function showCard(deck) {
-  cardNameElement.text(deck.card_Name);
-  cardImageElement.attr("src", deck.card_Image);
-  cardDescElement.text(deck.card_Description);
+  // let name = deck.card_Name
+  // let image = deck.card_Image
+  // let desc = deck.card_Description
   deckCount--;
   cardCountElement.text("Remaining Cards: " + deckCount);
 
-  console.log(shuffleCards);
+  localStorage.setItem("deckSave", JSON.stringify(deck));
 
+  let parseDeck = JSON.parse(localStorage.getItem("deckSave"));
+  let name = parseDeck.card_Name;
+  let image = parseDeck.card_Image
+  let desc = parseDeck.card_Description
+
+
+  cardNameElement.text(name);
+  cardImageElement.attr("src", image);
+  cardDescElement.text(desc);
+  usedCards.push({
+    name : name, image : image, desc : desc});
+
+  console.log(parseDeck.card_Name);
+  console.log(parseDeck.card_Image);
+  console.log(parseDeck.card_Description);
+  console.log(usedCards);
+  console.log(shuffleCards);
+ 
+ 
   if (shuffleCards.length > currentCardIndex + 1) {
     drawCard.removeClass("hide");
+    // removeCard();
   } else {
     drawCard.addClass("hide");
     cardNameElement.addClass("hide");
@@ -44,10 +65,18 @@ function showCard(deck) {
     finishElement.removeClass("hide");
     smokeElement.removeClass("hide");
   }
-
-  // console.log(cardNameElement);
-  // console.log(cardImageElement);
 }
+
+// function getDeck(){
+//   let drawnCards = localStorage.getItem("deckSave")
+//   usedCards = JSON.parse(drawnCards) || [];
+//   console.log(usedCards);
+// }
+// getDeck()
+// function removeCard(){
+//   shuffleCards.shift();
+//   console.log(shuffleCards);
+// };
 
 const deck = [
   {
